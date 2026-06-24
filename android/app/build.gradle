@@ -3,21 +3,15 @@ plugins {
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
-
 android {
     namespace "com.cyrusvpn.app"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
+    kotlinOptions { jvmTarget = "1.8" }
     defaultConfig {
         applicationId "com.cyrusvpn.app"
         minSdk 21
@@ -25,16 +19,8 @@ android {
         versionCode flutter.versionCode
         versionName flutter.versionName
     }
-
     buildTypes {
-        release {
-            signingConfig signingConfigs.debug
-            minifyEnabled false
-            shrinkResources false
-        }
+        release { signingConfig signingConfigs.debug }
     }
 }
-
-flutter {
-    source '../..'
-}
+flutter { source "../.." }
